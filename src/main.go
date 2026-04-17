@@ -39,8 +39,8 @@ func main() {
 			<td style="padding: 6px 12px; border-bottom: 1px solid #333; color: #888;">Types "Hello, BranchKit!"</td>
 		</tr>
 		<tr>
-			<td style="padding: 6px 12px;"><em>"hello [name]"</em></td>
-			<td style="padding: 6px 12px; color: #888;">Types "Hello, [name]!" with any spoken name</td>
+			<td style="padding: 6px 12px;"><em>"hello &lt;name&gt;"</em></td>
+			<td style="padding: 6px 12px; color: #888;">Types "Hello, &lt;name&gt;!" with any spoken word</td>
 		</tr>
 	</table>
 
