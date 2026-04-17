@@ -22,7 +22,7 @@
   "store_data": {
     "voice_commands": "commands.json",
     "keybinds": {
-      "alt+shift+h": "helloworld greet BranchKit"
+      "alt+shift+h": "helloworld greet"
     }
   },
   "implements": {
