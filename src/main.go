@@ -5,7 +5,7 @@ import shared "github.com/branchkit/plugin-sdk-go"
 func main() {
 	plugin := shared.NewPlugin()
 
-	plugin.HandleAction("hello.greet", func(req *shared.OnActionRequest) (any, error) {
+	plugin.HandleAction("helloworld.greet", func(req *shared.OnActionRequest) (any, error) {
 		var p GreetParams
 		req.UnmarshalParams(&p)
 

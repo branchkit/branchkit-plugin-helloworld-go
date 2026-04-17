@@ -41,7 +41,7 @@ cd src && go build -o ../hello-plugin .
 Copy the plugin into BranchKit's plugin directory:
 
 ```bash
-cp -r . ~/Library/Application\ Support/BranchKitDev/plugins/hello/
+cp -r . ~/Library/Application\ Support/BranchKitDev/plugins/helloworld/
 ```
 
 Restart BranchKit. Your plugin loads automatically.

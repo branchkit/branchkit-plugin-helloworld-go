@@ -1,11 +1,11 @@
 {
-  "id": "hello",
+  "id": "helloworld",
   "name": "Hello World",
   "version": "1.0.0",
   "description": "A minimal BranchKit plugin that types a greeting at the cursor.",
   "author": "Your Name",
   "run": "./hello-plugin",
-  "action_prefix": "hello",
+  "action_prefix": "helloworld",
   "action_types": {
     "greet": {
       "label": "Greet",
@@ -21,7 +21,7 @@
   "store_data": {
     "voice_commands": "commands.json",
     "keybinds": {
-      "alt+shift+h": "hello greet BranchKit"
+      "alt+shift+h": "helloworld greet BranchKit"
     }
   },
   "implements": {

@@ -3,7 +3,7 @@
 
 package main
 
-// GreetParams is the params shape for action "hello.greet (Greet)".
+// GreetParams is the params shape for action "helloworld.greet (Greet)".
 type GreetParams struct {
 	Name *string `json:"name,omitempty"`
 }
