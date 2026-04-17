@@ -1,4 +1,4 @@
-module github.com/branchkit/hello-plugin-go
+module github.com/branchkit/branchkit-plugin-hello-go
 
 go 1.24.5
 

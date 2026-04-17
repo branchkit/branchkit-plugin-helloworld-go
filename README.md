@@ -15,7 +15,7 @@ This is a **starter template** — clone it, customize it, and use it as the fou
 ### 1. Clone
 
 ```bash
-git clone https://github.com/branchkit/hello-plugin-go.git my-plugin
+git clone https://github.com/branchkit/branchkit-plugin-hello-go.git my-plugin
 cd my-plugin
 ```
 
