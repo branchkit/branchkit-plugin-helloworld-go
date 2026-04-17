@@ -38,13 +38,23 @@ cd src && go build -o ../hello-plugin .
 
 ### 4. Install
 
-Copy the plugin into BranchKit's plugin directory:
+Symlink your plugin directory into BranchKit's plugin directory:
 
 ```bash
-cp -r . ~/Library/Application\ Support/BranchKitDev/plugins/helloworld/
+ln -s $(pwd) ~/Library/Application\ Support/BranchKit/plugins/helloworld
 ```
 
 Restart BranchKit. Your plugin loads automatically.
+
+### 5. Development loop
+
+Because you installed via symlink, your working directory is the live plugin. Edit, rebuild, restart:
+
+```bash
+cd src && go build -o ../hello-plugin . && killall BranchKit; open /Applications/BranchKit.app
+```
+
+No copy step — BranchKit reads from the symlinked path directly.
 
 ## Files
 
