@@ -26,6 +26,10 @@
     }
   },
   "implements": {
-    "on_action": true
+    "on_action": true,
+    "render_settings": true,
+    "settings_tabs": [
+      { "label": "Getting Started", "key": "getting_started" }
+    ]
   }
 }
