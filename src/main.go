@@ -2,9 +2,7 @@ package main
 
 import "github.com/branchkit/plugin-sdk-go"
 
-type RenderSettingsRequest struct {
-	TabKey string `json:"tab_key"`
-}
+
 
 func main() {
 	plugin := branchkit.NewPlugin()
@@ -24,9 +22,12 @@ func main() {
 		return nil, plugin.InputTypeText("Hello, " + name + "!")
 	})
 
-	branchkit.HandleTyped(plugin, "render_settings", func(_ *RenderSettingsRequest) (any, error) {
-		return branchkit.RenderSettingsResponse{
-			HTML: `<div style="padding: 16px; font-family: system-ui;">
+	// One renderer per tab declared in plugin.json. The SDK owns the
+	// render_settings hook: it dispatches on the tab key and re-renders the
+	// tab through the settings stream whenever a method returns.
+	plugin.SettingsTab("getting_started", func(_ *branchkit.RenderSettingsRequest) (string, error) {
+		return `<div style="padding: 16px; font-family: system-ui;">
+
 	<h2 style="margin: 0 0 12px 0;">Helloworld</h2>
 	<p style="color: #888; margin: 0 0 16px 0;">A BranchKit plugin</p>
 
@@ -41,9 +42,9 @@ func main() {
 			<td style="padding: 6px 12px; color: #888;">Types "Hello, &lt;name&gt;!" with any spoken word</td>
 		</tr>
 	</table>
-</div>`,
-		}, nil
+</div>`, nil
 	})
+
 
 	plugin.Run()
 }
