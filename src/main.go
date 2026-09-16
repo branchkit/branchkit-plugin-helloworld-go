@@ -2,8 +2,6 @@ package main
 
 import "github.com/branchkit/plugin-sdk-go"
 
-
-
 func main() {
 	plugin := branchkit.NewPlugin()
 
@@ -23,28 +21,36 @@ func main() {
 	})
 
 	// One renderer per tab declared in plugin.json. The SDK owns the
-	// render_settings hook: it dispatches on the tab key and re-renders the
-	// tab through the settings stream whenever a method returns.
+	// render_settings hook: it dispatches on the tab key, refreshes every
+	// settings mirror before the renderer runs, and re-renders the tab
+	// through the settings stream whenever one of this plugin's methods
+	// returns. The markup is the platform's own components, so the tab
+	// matches the rest of the settings UI without CSS of its own.
 	plugin.SettingsTab("getting_started", func(_ *branchkit.RenderSettingsRequest) (string, error) {
-		return `<div style="padding: 16px; font-family: system-ui;">
-
-	<h2 style="margin: 0 0 12px 0;">Helloworld</h2>
-	<p style="color: #888; margin: 0 0 16px 0;">A BranchKit plugin</p>
-
-	<h3 style="margin: 0 0 8px 0;">Voice Commands</h3>
-	<table style="border-collapse: collapse; width: 100%;">
-		<tr>
-			<td style="padding: 6px 12px; border-bottom: 1px solid #333;"><em>"hello branchkit"</em></td>
-			<td style="padding: 6px 12px; border-bottom: 1px solid #333; color: #888;">Types "Hello, BranchKit!"</td>
-		</tr>
-		<tr>
-			<td style="padding: 6px 12px;"><em>"hello &lt;name&gt;"</em></td>
-			<td style="padding: 6px 12px; color: #888;">Types "Hello, &lt;name&gt;!" with any spoken word</td>
-		</tr>
-	</table>
-</div>`, nil
+		return `
+<bk-cards>
+  <bk-card label="Helloworld">
+    <p>A BranchKit plugin</p>
+  </bk-card>
+  <bk-card label="Voice commands" count="2 commands">
+    <bk-table columns="1fr 2fr">
+      <div class="table-header">
+        <div>Say</div>
+        <div>Does</div>
+      </div>
+      <div class="settings-row">
+        <div class="label">&ldquo;hello branchkit&rdquo;</div>
+        <div class="value">Types &ldquo;Hello, BranchKit!&rdquo;</div>
+      </div>
+      <div class="settings-row">
+        <div class="label">&ldquo;hello &lt;name&gt;&rdquo;</div>
+        <div class="value">Types &ldquo;Hello, &lt;name&gt;!&rdquo; with any spoken word</div>
+      </div>
+    </bk-table>
+  </bk-card>
+</bk-cards>
+`, nil
 	})
-
 
 	plugin.Run()
 }
