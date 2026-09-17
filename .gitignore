@@ -1,1 +1,4 @@
+# build output (branchkit-cli dev build)
 helloworld-plugin
+helloworld-plugin.exe
+dist/
