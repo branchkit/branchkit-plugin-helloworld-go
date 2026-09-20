@@ -1,2 +1,6 @@
-github.com/branchkit/plugin-sdk-go v0.6.0 h1:qUZH4iZ4TAO71zOMSwtTtv2xblU8Pu2+QVXDmLvyxsQ=
-github.com/branchkit/plugin-sdk-go v0.6.0/go.mod h1:GG07T1G/8a/bg5yMwBP0pawQXnt7eCBXSOkAcBRL+F0=
+github.com/Microsoft/go-winio v0.6.2 h1:F2VQgta7ecxGYO8k3ZZz3RS8fVIXVxONVUPlNERoyfY=
+github.com/Microsoft/go-winio v0.6.2/go.mod h1:yd8OoFMLzJbo9gZq8j5qaps8bJ9aShtEA8Ipt1oGCvU=
+github.com/branchkit/plugin-sdk-go v0.9.0 h1:1n8QbYDywz0Lg3shmXvF3VTK9Apbiu8teWK5dCqf5KE=
+github.com/branchkit/plugin-sdk-go v0.9.0/go.mod h1:pDWEJyZJgrea97VkRuSF6p9KsxR48YQr4MCiuFnrVrw=
+golang.org/x/sys v0.10.0 h1:SqMFp9UcQJZa+pmYuAKjd9xq1f0j5rLcDIk0mj4qAsA=
+golang.org/x/sys v0.10.0/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
