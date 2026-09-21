@@ -6,7 +6,9 @@
   "min_api_version": "0.1.0",
   "description": "A BranchKit plugin",
   "author": "Your Name",
-  "privileges": ["input"],
+  "requires": {
+    "privileges": ["input"]
+  },
   "dev": {
     "build": [
       ["go", "build", "-o", "../helloworld-plugin", "."]
