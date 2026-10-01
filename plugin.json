@@ -34,7 +34,7 @@
   },
   "collection_data": {
     "voice_commands": "commands.json",
-    "keybinds": {
+    "_platform.bindings": {
       "alt+shift+h": { "action": "helloworld.greet", "params": { "name": "BranchKit" } }
     }
   },
